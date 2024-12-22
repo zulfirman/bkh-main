@@ -1,0 +1,19 @@
+{
+  "name": "blockmesh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "signup": "node signup.js"
+  },
+  "author": "Chris",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "axios-cookiejar-support": "^5.0.3",
+    "node-schedule": "^2.1.1",
+    "qs": "^6.11.0",
+    "tough-cookie": "^5.0.0",
+    "dotenv": "^16.4.7"
+  }
+}

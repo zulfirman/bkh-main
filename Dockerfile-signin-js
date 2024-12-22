@@ -1,0 +1,16 @@
+FROM node:23-alpine
+
+# Set environment variables
+ENV NODE_ENV=production
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+COPY package.json package-lock.json* ./
+RUN npm install --omit=dev
+
+# Bundle app source
+COPY . .
+
+CMD [ "node", "signin.js" ]

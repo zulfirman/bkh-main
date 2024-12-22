@@ -1,0 +1,7 @@
+- install node js
+- install docker
+- run "npm i"
+- isi email.txt
+- isi password di .env
+- run "node generate-dc.js"
+- run "bash up.sh" (linux) / "up.sh" (windows)

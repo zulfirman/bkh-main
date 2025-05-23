@@ -1,0 +1,42 @@
+services:
+  blockmesh-0:
+    build:
+      context: .
+      dockerfile: Dockerfile-js
+    container_name: blockmesh-0
+    environment:
+      - NODE_ENV=production
+    restart: "always"
+    cpus: "1"
+    mem_reservation: "50M"
+    mem_limit: "80M"
+
+  blockmesh-1:
+    image: ubuntu:25.04
+    container_name: blockmesh-1
+    build:
+      context: .
+    restart: "always"
+    cpus: "1"
+    mem_reservation: "50M"
+    mem_limit: "70M"
+    environment:
+      STARTUP_DELAY: 0
+      EMAIL: email1@gmail.com
+      PASSWORD: ${PASSWORD}
+    entrypoint: ["sh", "-c", "./blockmesh-cli --email email1@gmail.com --password ${PASSWORD}"]
+
+  blockmesh-2:
+    image: ubuntu:25.04
+    container_name: blockmesh-2
+    build:
+      context: .
+    restart: "always"
+    cpus: "1"
+    mem_reservation: "50M"
+    mem_limit: "70M"
+    environment:
+      STARTUP_DELAY: 60
+      EMAIL: email2@gmail.com
+      PASSWORD: ${PASSWORD}
+    entrypoint: ["sh", "-c", "./blockmesh-cli --email email2@gmail.com --password ${PASSWORD}"]
